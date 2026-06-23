@@ -1,194 +1,127 @@
 ---# 1-PROJETO-DO-SEGUNDO-TRI
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SportWear - Blusas Esportivas</title>
+<title>Mundo iPhone</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f5f5f7;
+    }
 
-body{
-    background:#f4f4f4;
-}
+    header {
+        background-color: #000;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
 
-header{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
+    nav {
+        background-color: #222;
+        text-align: center;
+        padding: 10px;
+    }
 
-nav{
-    background:#222;
-    padding:15px;
-    text-align:center;
-}
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 15px;
+    }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 15px;
-}
+    .banner {
+        text-align: center;
+        padding: 50px;
+        background: linear-gradient(to right, #000, #444);
+        color: white;
+    }
 
-.banner{
-    background:linear-gradient(to right,#0077ff,#00c3ff);
-    color:white;
-    text-align:center;
-    padding:80px 20px;
-}
+    .produtos {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 30px;
+    }
 
-.banner h1{
-    font-size:50px;
-}
+    .card {
+        background: white;
+        width: 250px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        text-align: center;
+        padding: 20px;
+    }
 
-.produtos{
-    padding:40px;
-}
+    .card img {
+        width: 100%;
+        border-radius: 10px;
+    }
 
-.produtos h2{
-    text-align:center;
-    margin-bottom:30px;
-}
+    button {
+        background-color: #0071e3;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
-
-.card{
-    background:white;
-    border-radius:12px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
-    overflow:hidden;
-}
-
-.card img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-}
-
-.card-info{
-    padding:15px;
-    text-align:center;
-}
-
-.preco{
-    color:green;
-    font-size:22px;
-    margin:10px 0;
-}
-
-button{
-    background:#0077ff;
-    color:white;
-    border:none;
-    padding:10px 20px;
-    border-radius:5px;
-    cursor:pointer;
-}
-
-#carrinho{
-    position:fixed;
-    top:15px;
-    right:15px;
-    background:#fff;
-    padding:10px 15px;
-    border-radius:20px;
-    font-weight:bold;
-    box-shadow:0 0 10px rgba(0,0,0,.2);
-}
-
-footer{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:30px;
-}
+    footer {
+        background-color: #000;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        margin-top: 20px;
+    }
 </style>
 </head>
 
 <body>
 
-<div id="carrinho">🛒 0 itens</div>
-
 <header>
-    <h1>SportWear</h1>
-    <p>As melhores blusas esportivas para seu treino</p>
+    <h1>Mundo iPhone</h1>
+    <p>Tudo sobre os melhores iPhones</p>
 </header>
 
 <nav>
     <a href="#">Início</a>
-    <a href="#">Produtos</a>
-    <a href="#">Promoções</a>
+    <a href="#">Modelos</a>
+    <a href="#">Preços</a>
     <a href="#">Contato</a>
 </nav>
 
 <section class="banner">
-    <h1>Nova Coleção 2026</h1>
-    <p>Conforto, estilo e performance.</p>
+    <h2>Conheça os Novos iPhones</h2>
+    <p>Design moderno, câmeras incríveis e máxima performance.</p>
 </section>
 
 <section class="produtos">
-    <h2>Blusas em Destaque</h2>
+    <div class="card">
+        <h3>iPhone 16</h3>
+        <p>Tela avançada e ótimo desempenho.</p>
+        <button>Saiba Mais</button>
+    </div>
 
-    <div class="grid">
+    <div class="card">
+        <h3>iPhone 16 Pro</h3>
+        <p>Câmera profissional e chip poderoso.</p>
+        <button>Saiba Mais</button>
+    </div>
 
-        <div class="card">
-            <img src="https://via.placeholder.com/300x250" alt="Blusa Dry Fit">
-            <div class="card-info">
-                <h3>Blusa Dry Fit</h3>
-                <p>Ideal para corrida e academia.</p>
-                <div class="preco">R$ 79,90</div>
-                <button onclick="adicionar()">Comprar</button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://via.placeholder.com/300x250" alt="Blusa Treino">
-            <div class="card-info">
-                <h3>Blusa Treino Pro</h3>
-                <p>Tecido leve e respirável.</p>
-                <div class="preco">R$ 99,90</div>
-                <button onclick="adicionar()">Comprar</button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://via.placeholder.com/300x250" alt="Blusa Manga Longa">
-            <div class="card-info">
-                <h3>Blusa Manga Longa</h3>
-                <p>Perfeita para dias frios.</p>
-                <div class="preco">R$ 119,90</div>
-                <button onclick="adicionar()">Comprar</button>
-            </div>
-        </div>
-
+    <div class="card">
+        <h3>iPhone 16 Pro Max</h3>
+        <p>A melhor experiência da linha iPhone.</p>
+        <button>Saiba Mais</button>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 SportWear - Todos os direitos reservados.</p>
+    <p>© 2026 Mundo iPhone - Site Demonstrativo</p>
 </footer>
-
-<script>
-let itens = 0;
-
-function adicionar(){
-    itens++;
-    document.getElementById("carrinho").innerHTML =
-    "🛒 " + itens + " itens";
-}
-</script>
 
 </body>
 </html>
