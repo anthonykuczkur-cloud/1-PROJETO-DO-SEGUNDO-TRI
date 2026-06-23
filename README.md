@@ -1,127 +1,281 @@
 ---# 1-PROJETO-DO-SEGUNDO-TRI
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mundo iPhone</title>
+<title>PUMA Sports</title>
 
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background-color: #f5f5f7;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
-    header {
-        background-color: #000;
-        color: white;
-        text-align: center;
-        padding: 20px;
-    }
+body{
+    background:#f5f5f5;
+}
 
-    nav {
-        background-color: #222;
-        text-align: center;
-        padding: 10px;
-    }
+header{
+    background:#000;
+    color:#fff;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-    nav a {
-        color: white;
-        text-decoration: none;
-        margin: 15px;
-    }
+.logo{
+    font-size:32px;
+    font-weight:bold;
+    color:#fff;
+}
 
-    .banner {
-        text-align: center;
-        padding: 50px;
-        background: linear-gradient(to right, #000, #444);
-        color: white;
-    }
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin-left:20px;
+    transition:0.3s;
+}
 
-    .produtos {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 30px;
-    }
+nav a:hover{
+    color:#ffcc00;
+}
 
-    .card {
-        background: white;
-        width: 250px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        text-align: center;
-        padding: 20px;
-    }
+.hero{
+    height:90vh;
+    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+    url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+}
 
-    .card img {
-        width: 100%;
-        border-radius: 10px;
-    }
+.hero-content h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
 
-    button {
-        background-color: #0071e3;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
+.hero-content p{
+    font-size:22px;
+    margin-bottom:30px;
+}
 
-    footer {
-        background-color: #000;
-        color: white;
-        text-align: center;
-        padding: 15px;
-        margin-top: 20px;
-    }
+.btn{
+    background:#ffcc00;
+    color:#000;
+    padding:15px 30px;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+.produtos{
+    padding:80px 8%;
+}
+
+.titulo{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:40px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+    text-align:center;
+}
+
+.preco{
+    color:#00a000;
+    font-size:22px;
+    margin:10px 0;
+}
+
+button{
+    background:#000;
+    color:#fff;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.sobre{
+    background:#000;
+    color:#fff;
+    padding:80px 10%;
+    text-align:center;
+}
+
+.contato{
+    padding:80px 10%;
+}
+
+form{
+    max-width:600px;
+    margin:auto;
+}
+
+input, textarea{
+    width:100%;
+    padding:15px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+footer{
+    background:#111;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+}
+
+#contador{
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:#ffcc00;
+    color:#000;
+    padding:10px 15px;
+    border-radius:20px;
+    font-weight:bold;
+}
 </style>
 </head>
-
 <body>
 
+<div id="contador">Carrinho: 0</div>
+
 <header>
-    <h1>Mundo iPhone</h1>
-    <p>Tudo sobre os melhores iPhones</p>
+    <div class="logo">PUMA</div>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+    </nav>
 </header>
 
-<nav>
-    <a href="#">Início</a>
-    <a href="#">Modelos</a>
-    <a href="#">Preços</a>
-    <a href="#">Contato</a>
-</nav>
-
-<section class="banner">
-    <h2>Conheça os Novos iPhones</h2>
-    <p>Design moderno, câmeras incríveis e máxima performance.</p>
+<section class="hero" id="inicio">
+    <div class="hero-content">
+        <h1>PUMA SPORTS</h1>
+        <p>Velocidade, Estilo e Performance.</p>
+        <a href="#produtos" class="btn">Comprar Agora</a>
+    </div>
 </section>
 
-<section class="produtos">
-    <div class="card">
-        <h3>iPhone 16</h3>
-        <p>Tela avançada e ótimo desempenho.</p>
-        <button>Saiba Mais</button>
-    </div>
+<section class="produtos" id="produtos">
+    <h2 class="titulo">Produtos em Destaque</h2>
 
-    <div class="card">
-        <h3>iPhone 16 Pro</h3>
-        <p>Câmera profissional e chip poderoso.</p>
-        <button>Saiba Mais</button>
-    </div>
+    <div class="grid">
 
-    <div class="card">
-        <h3>iPhone 16 Pro Max</h3>
-        <p>A melhor experiência da linha iPhone.</p>
-        <button>Saiba Mais</button>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600">
+            <div class="card-content">
+                <h3>Tênis Running</h3>
+                <p class="preco">R$ 499,90</p>
+                <button onclick="adicionar()">Adicionar</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600">
+            <div class="card-content">
+                <h3>Tênis Esportivo</h3>
+                <p class="preco">R$ 599,90</p>
+                <button onclick="adicionar()">Adicionar</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600">
+            <div class="card-content">
+                <h3>Camiseta Puma</h3>
+                <p class="preco">R$ 149,90</p>
+                <button onclick="adicionar()">Adicionar</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600">
+            <div class="card-content">
+                <h3>Moletom Puma</h3>
+                <p class="preco">R$ 299,90</p>
+                <button onclick="adicionar()">Adicionar</button>
+            </div>
+        </div>
+
     </div>
+</section>
+
+<section class="sobre" id="sobre">
+    <h2>Sobre a Puma</h2>
+    <br>
+    <p>
+        A Puma é uma das maiores marcas esportivas do mundo,
+        reconhecida por sua inovação, design moderno e produtos
+        de alta performance para atletas e apaixonados por esporte.
+    </p>
+</section>
+
+<section class="contato" id="contato">
+    <h2 class="titulo">Contato</h2>
+
+    <form>
+        <input type="text" placeholder="Seu nome" required>
+        <input type="email" placeholder="Seu e-mail" required>
+        <textarea rows="5" placeholder="Sua mensagem"></textarea>
+        <button type="submit">Enviar</button>
+    </form>
 </section>
 
 <footer>
-    <p>© 2026 Mundo iPhone - Site Demonstrativo</p>
+    <p>© 2026 Puma Sports - Site Demonstrativo</p>
 </footer>
+
+<script>
+let carrinho = 0;
+
+function adicionar(){
+    carrinho++;
+    document.getElementById("contador").innerHTML =
+    "Carrinho: " + carrinho;
+
+    alert("Produto adicionado ao carrinho!");
+}
+</script>
 
 </body>
 </html>
