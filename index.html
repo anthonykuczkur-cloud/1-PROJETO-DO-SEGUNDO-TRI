@@ -3,57 +3,86 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SportWear - Blusas Esportivas</title>
+<title>PUMA Sports</title>
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-    background:#f4f4f4;
+    background:#f5f5f5;
 }
 
 header{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:20px;
+    background:#000;
+    color:#fff;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-nav{
-    background:#222;
-    padding:15px;
-    text-align:center;
+.logo{
+    font-size:32px;
+    font-weight:bold;
+    color:#fff;
 }
 
 nav a{
-    color:white;
+    color:#fff;
     text-decoration:none;
-    margin:0 15px;
+    margin-left:20px;
+    transition:0.3s;
 }
 
-.banner{
-    background:linear-gradient(to right,#0077ff,#00c3ff);
-    color:white;
+nav a:hover{
+    color:#ffcc00;
+}
+
+.hero{
+    height:90vh;
+    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+    url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     text-align:center;
-    padding:80px 20px;
+    color:#fff;
 }
 
-.banner h1{
-    font-size:50px;
+.hero-content h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:22px;
+    margin-bottom:30px;
+}
+
+.btn{
+    background:#ffcc00;
+    color:#000;
+    padding:15px 30px;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
 }
 
 .produtos{
-    padding:40px;
+    padding:80px 8%;
 }
 
-.produtos h2{
+.titulo{
     text-align:center;
-    margin-bottom:30px;
+    margin-bottom:40px;
+    font-size:40px;
 }
 
 .grid{
@@ -63,10 +92,15 @@ nav a{
 }
 
 .card{
-    background:white;
-    border-radius:12px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    background:#fff;
+    border-radius:15px;
     overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
 }
 
 .card img{
@@ -75,117 +109,170 @@ nav a{
     object-fit:cover;
 }
 
-.card-info{
-    padding:15px;
+.card-content{
+    padding:20px;
     text-align:center;
 }
 
 .preco{
-    color:green;
+    color:#00a000;
     font-size:22px;
     margin:10px 0;
 }
 
 button{
-    background:#0077ff;
-    color:white;
+    background:#000;
+    color:#fff;
     border:none;
-    padding:10px 20px;
-    border-radius:5px;
+    padding:12px 20px;
+    border-radius:8px;
     cursor:pointer;
 }
 
-#carrinho{
-    position:fixed;
-    top:15px;
-    right:15px;
-    background:#fff;
-    padding:10px 15px;
-    border-radius:20px;
-    font-weight:bold;
-    box-shadow:0 0 10px rgba(0,0,0,.2);
+.sobre{
+    background:#000;
+    color:#fff;
+    padding:80px 10%;
+    text-align:center;
+}
+
+.contato{
+    padding:80px 10%;
+}
+
+form{
+    max-width:600px;
+    margin:auto;
+}
+
+input, textarea{
+    width:100%;
+    padding:15px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
 }
 
 footer{
     background:#111;
-    color:white;
+    color:#fff;
     text-align:center;
     padding:20px;
-    margin-top:30px;
+}
+
+#contador{
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:#ffcc00;
+    color:#000;
+    padding:10px 15px;
+    border-radius:20px;
+    font-weight:bold;
 }
 </style>
 </head>
-
 <body>
 
-<div id="carrinho">🛒 0 itens</div>
+<div id="contador">Carrinho: 0</div>
 
 <header>
-    <h1>SportWear</h1>
-    <p>As melhores blusas esportivas para seu treino</p>
+    <div class="logo">PUMA</div>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+    </nav>
 </header>
 
-<nav>
-    <a href="#">Início</a>
-    <a href="#">Produtos</a>
-    <a href="#">Promoções</a>
-    <a href="#">Contato</a>
-</nav>
-
-<section class="banner">
-    <h1>Nova Coleção 2026</h1>
-    <p>Conforto, estilo e performance.</p>
+<section class="hero" id="inicio">
+    <div class="hero-content">
+        <h1>PUMA SPORTS</h1>
+        <p>Velocidade, Estilo e Performance.</p>
+        <a href="#produtos" class="btn">Comprar Agora</a>
+    </div>
 </section>
 
-<section class="produtos">
-    <h2>Blusas em Destaque</h2>
+<section class="produtos" id="produtos">
+    <h2 class="titulo">Produtos em Destaque</h2>
 
     <div class="grid">
 
         <div class="card">
-            <img src="https://via.placeholder.com/300x250" alt="Blusa Dry Fit">
-            <div class="card-info">
-                <h3>Blusa Dry Fit</h3>
-                <p>Ideal para corrida e academia.</p>
-                <div class="preco">R$ 79,90</div>
-                <button onclick="adicionar()">Comprar</button>
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600">
+            <div class="card-content">
+                <h3>Tênis Running</h3>
+                <p class="preco">R$ 499,90</p>
+                <button onclick="adicionar()">Adicionar</button>
             </div>
         </div>
 
         <div class="card">
-            <img src="https://via.placeholder.com/300x250" alt="Blusa Treino">
-            <div class="card-info">
-                <h3>Blusa Treino Pro</h3>
-                <p>Tecido leve e respirável.</p>
-                <div class="preco">R$ 99,90</div>
-                <button onclick="adicionar()">Comprar</button>
+            <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600">
+            <div class="card-content">
+                <h3>Tênis Esportivo</h3>
+                <p class="preco">R$ 599,90</p>
+                <button onclick="adicionar()">Adicionar</button>
             </div>
         </div>
 
         <div class="card">
-            <img src="https://via.placeholder.com/300x250" alt="Blusa Manga Longa">
-            <div class="card-info">
-                <h3>Blusa Manga Longa</h3>
-                <p>Perfeita para dias frios.</p>
-                <div class="preco">R$ 119,90</div>
-                <button onclick="adicionar()">Comprar</button>
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600">
+            <div class="card-content">
+                <h3>Camiseta Puma</h3>
+                <p class="preco">R$ 149,90</p>
+                <button onclick="adicionar()">Adicionar</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600">
+            <div class="card-content">
+                <h3>Moletom Puma</h3>
+                <p class="preco">R$ 299,90</p>
+                <button onclick="adicionar()">Adicionar</button>
             </div>
         </div>
 
     </div>
 </section>
 
+<section class="sobre" id="sobre">
+    <h2>Sobre a Puma</h2>
+    <br>
+    <p>
+        A Puma é uma das maiores marcas esportivas do mundo,
+        reconhecida por sua inovação, design moderno e produtos
+        de alta performance para atletas e apaixonados por esporte.
+    </p>
+</section>
+
+<section class="contato" id="contato">
+    <h2 class="titulo">Contato</h2>
+
+    <form>
+        <input type="text" placeholder="Seu nome" required>
+        <input type="email" placeholder="Seu e-mail" required>
+        <textarea rows="5" placeholder="Sua mensagem"></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
 <footer>
-    <p>© 2026 SportWear - Todos os direitos reservados.</p>
+    <p>© 2026 Puma Sports - Site Demonstrativo</p>
 </footer>
 
 <script>
-let itens = 0;
+let carrinho = 0;
 
 function adicionar(){
-    itens++;
-    document.getElementById("carrinho").innerHTML =
-    "🛒 " + itens + " itens";
+    carrinho++;
+    document.getElementById("contador").innerHTML =
+    "Carrinho: " + carrinho;
+
+    alert("Produto adicionado ao carrinho!");
 }
 </script>
 
